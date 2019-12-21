@@ -10,7 +10,8 @@ let initialSatte = {
   totalGalleryPage: 0,
   galleryData: [],
   activeGalleryPage: 0,
-  groupNotFound: false
+  groupNotFound: false,
+  galleryAPICalled: false
 };
 
 const reducer = (state = initialSatte, action) => {
@@ -21,7 +22,8 @@ const reducer = (state = initialSatte, action) => {
         groupAutoFillData: action.data,
         total: action.total,
         pages: action.pages,
-        groupNotFound: false
+        groupNotFound: false,
+        galleryAPICalled: false
       }
 
     case actionTypes.SAVE_GROUP_DATA:
@@ -29,7 +31,8 @@ const reducer = (state = initialSatte, action) => {
         ...state,
         groupData: action.data,
         groupApiCalled: true,
-        groupNotFound: false
+        groupNotFound: false,
+        galleryAPICalled: false
       }
 
     case actionTypes.SAVE_GALLERY_DATA:
@@ -39,13 +42,15 @@ const reducer = (state = initialSatte, action) => {
         totalGalleryPage: action.totalPage,
         totalPhotos: action.totalPhotos,
         activeGalleryPage: action.activePage,
-        groupNotFound: false
+        groupNotFound: false,
+        galleryAPICalled: true
       }
 
     case actionTypes.SAVE_GROUP_NOT_FOUND:
       return {
         ...state,
-        groupNotFound: true
+        groupNotFound: true,
+        galleryAPICalled: true
       }
 
     default:

@@ -52,13 +52,17 @@ class Gallery extends Component {
     const { galleryData } = this.props;
     return(
       <FlexBox ref="galleryRef">
-        {galleryData.map((obj, i) => {
-          return (
-            <ImageCard key={i}>
-              <img src={obj.url_c} alt={obj.title} style={{ width: '100%', height: '100%'}}/>
-            </ImageCard>
-          )}
-        )}
+        { (galleryData && galleryData.length > 0) ?
+          galleryData.map((obj, i) => {
+            return (
+              <ImageCard key={i}>
+                <img src={obj.url_c} alt={obj.title} style={{ width: '100%', height: '100%'}}/>
+              </ImageCard>
+            )}
+          )
+          :
+          this.notFoundUI('No photo available')
+        }
       </FlexBox>
     )
   }
@@ -68,11 +72,11 @@ class Gallery extends Component {
     history.push(url)
   }
 
-  notFoundUI = () => {
+  notFoundUI = (text) => {
     return (
       <NotFoundWrapper>
         <NotFountText>
-          Group Not Found
+          {text}
         </NotFountText>
         <BackButton onClick={() => this.pushURL('/groups')}>
           Go back to Group page
@@ -82,7 +86,7 @@ class Gallery extends Component {
   }
 
   render() {
-    const { groupNotFound } = this.props;
+    const { groupNotFound, galleryAPICalled } = this.props;
     return ( 
       <div>
         <SearchWrapper>
@@ -90,9 +94,14 @@ class Gallery extends Component {
             Gallery View
           </div>
         </SearchWrapper>
-        <GalleryWrapper onScroll={(e) => this.fireOnScroll(e)}>
-          {groupNotFound ? this.notFoundUI() : this.getMasonaryUI()}
-        </GalleryWrapper>
+        { galleryAPICalled 
+          ?
+          <GalleryWrapper onScroll={(e) => this.fireOnScroll(e)}>
+            {groupNotFound ? this.notFoundUI('Group Not Found') : this.getMasonaryUI()}
+          </GalleryWrapper>
+          :
+          <NotFoundWrapper>Loading</NotFoundWrapper>
+        }
       </div>
     )
   }
@@ -103,7 +112,8 @@ const mapStateToProps = (state) => ({
   totalGalleryPage: state.group.totalGalleryPage,
   totalPhotos: state.group.totalPhotos,
   activeGalleryPage: state.group.activeGalleryPage,
-  groupNotFound: state.group.groupNotFound
+  groupNotFound: state.group.groupNotFound,
+  galleryAPICalled: state.group.galleryAPICalled
 })
 
 const mapDispatchToProps = (dispatch) => ({

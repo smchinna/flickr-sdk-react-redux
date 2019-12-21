@@ -33,6 +33,7 @@ export const ImageCard = styled.div`
 export const FlexBox = styled.div`
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 `;
 
 export const NotFountText = styled.div`
