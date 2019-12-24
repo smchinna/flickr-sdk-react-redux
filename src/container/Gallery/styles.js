@@ -10,7 +10,7 @@ export const GalleryWrapper = styled.div`
 
 export const ImageCard = styled.div`
   width: calc(20% - 20px);
-  height: 350px;
+  height: 420px;
   color: white;
   font-size: 32px;
   padding: 10px;
@@ -27,6 +27,55 @@ export const ImageCard = styled.div`
   }
   @media(max-width: 450px) {
     width: calc(100% - 20px);
+  }
+  .box {
+    border: 1px solid lightgrey;;
+    .info {
+      overflow: hidden;
+      padding: 10px;
+      .title {
+        color: #53a5d6;
+        font-size: 16px;
+        text-align: center;
+        text-overflow: ellipsis;
+        height: 19px;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        white-space: normal;
+        word-wrap: break-word;
+        background-color: white;
+      }
+    }
+    .authorDetails {
+      overflow: hidden;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      >img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 15px;
+      }
+      .name {
+        color: #53a5d6;
+        font-size: 16px;
+        text-align: center;
+        text-overflow: ellipsis;
+        height: 19px;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        white-space: normal;
+        word-wrap: break-word;
+        background-color: white; 
+      }
+    }
   }
 `;
 

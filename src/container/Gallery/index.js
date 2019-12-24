@@ -56,7 +56,16 @@ class Gallery extends Component {
           galleryData.map((obj, i) => {
             return (
               <ImageCard key={i}>
-                <img src={obj.url_c} alt={obj.title} style={{ width: '100%', height: '100%'}}/>
+                <div className="box">
+                  <div className="info">
+                    <div className="title" title={obj.title}>{obj.title}</div>
+                  </div>
+                  <img src={obj.url_c ? obj.url_c : (obj.url_m ? obj.url_m : '')} alt={obj.title} style={{ width: '100%', height: '300px'}}/>
+                  <div className="authorDetails">
+                    <img src={(obj.iconurls && obj.iconurls.default) ? obj.iconurls.default : ''} alt="user"/>
+                    <div className="name" title={obj.ownername}>{obj.ownername}</div>
+                  </div>
+                </div>
               </ImageCard>
             )}
           )

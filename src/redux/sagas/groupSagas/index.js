@@ -30,7 +30,7 @@ function* groupData(action) {
 function* galleryData(action) {
   //let groupData = yield select(getGroupData)
   let param = {
-    extras: 'url_c',
+    extras: 'url_c, icon_urls, url_m',
     format: 'json',
     group_id: action.groupId,
     per_page: 20,

@@ -65,7 +65,8 @@ const Flex = styled.div`
   .flex {
     display: flex;
     .people {
-      margin-right: 20px;
+      margin-right: 10px;
+      margin-top: 5px;  
     }
   }
 `;
@@ -73,7 +74,7 @@ const Flex = styled.div`
 
 class GroupCard extends Component {
   render() {
-    const { img, name, redirectToGallery, item } = this.props
+    const { img, name, redirectToGallery, item } = this.props;
     return (
       <Wrapper>
         <Box>
@@ -85,12 +86,19 @@ class GroupCard extends Component {
               <div className="name" title={name}>
                 {name}
               </div>
-              <div className="start">
-                Since 2019
+              <div className="flex">
+                <div className="people">
+                  <div className="start">Members</div>
+                    <div>{item.members}</div>
+                </div>
+                <div className="people">
+                  <div className="start">Photos</div>
+                    <div>{item.pool_count}</div>
+                </div>
               </div>
               <div className="flex">
-                <div className="people">12</div>
-                <div className="gallery">12</div>
+                {/* <div className="people">12</div>
+                <div className="gallery">12</div> */}
               </div>
             </Flex>
           </ContentBox>

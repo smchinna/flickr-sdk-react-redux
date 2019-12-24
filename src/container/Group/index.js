@@ -70,7 +70,6 @@ class Group extends Component {
   }
 
   redirectToGallery = (item) => {
-    console.log(item)
     const { history, makeEmptyGallery } = this.props;
     makeEmptyGallery()
     history.push(`/gallery/${item.nsid}`)
