@@ -53,6 +53,17 @@ const reducer = (state = initialSatte, action) => {
         galleryAPICalled: true
       }
 
+    case actionTypes.SAVE_EMPTY_GALLERY:
+      return{
+        ...state,
+        totalPhotos: 0,
+        totalGalleryPage: 0,
+        galleryData: [],
+        activeGalleryPage: 0,
+        groupNotFound: false,
+        galleryAPICalled: false
+      }
+
     default:
       return state;
   }

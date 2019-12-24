@@ -7,3 +7,7 @@ export let getGroupAction = (data) => {
 export let getGalleryAction = (groupId, page) => {
   return { type: actionTypes.FETCH_GALLERY_DATA, page, groupId}
 }
+
+export let makeEmptyGallery = () => {
+  return { type: actionTypes.SAVE_EMPTY_GALLERY }
+}

@@ -7,7 +7,7 @@ import GroupCard from '../../components/GroupCard';
 
 import { CustomInput, GroupWrapper, SearchWrapper, NoData } from './styles';
 
-import { getGroupAction } from '../../redux/actions'
+import { getGroupAction, makeEmptyGallery } from '../../redux/actions'
 
 class Group extends Component {
 
@@ -71,7 +71,8 @@ class Group extends Component {
 
   redirectToGallery = (item) => {
     console.log(item)
-    const { history } = this.props;
+    const { history, makeEmptyGallery } = this.props;
+    makeEmptyGallery()
     history.push(`/gallery/${item.nsid}`)
   }
 
@@ -119,7 +120,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  getGroupAction: (data) => dispatch(getGroupAction(data))
+  getGroupAction: (data) => dispatch(getGroupAction(data)),
+  makeEmptyGallery: () => dispatch(makeEmptyGallery())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Group));
