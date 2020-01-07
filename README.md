@@ -1,5 +1,39 @@
+Project overview:
+  Making UI for the FlickR SDK using ReactJS. FlickR is providing service for free image hoisting and video hoisting. As well as FlickR providing Public SDK to get details(Live image URl, group Info, group member info, author info).
+  In this project mainly focused on the to search functionality for the groups and group info details.
+  
+  HOSTED LIVE URL(netlify):  https://blissful-agnesi-1c48a7.netlify.com/groups
+
+Project Functionalities:
+  Main Page:
+    *This page contains searching the group name on input field with auto suggession.
+    *After selecting group name from the suggestion UI, Displayed list of projects with info(like members and photos count).
+    *Group Card is clickable. it will redirect to the gallery page.
+  Gallery Page:
+    *This page is contain gallry details
+    *This page added pagination as well.
+    
+Important Functional Aspects:
+   Main Page:
+     *Search functionality have debouncing for to control the api call for auto suggestion.
+   Gallery Page:
+     *Pagination is implemented using scroll method fot better user experience.
+     
+  
+ Technolgies Overview:
+   ReactJs - Library (Component based approach to make UI)
+   Redux - State Management
+   Sagas - Middleware for the state management
+   Styled Components - CSS (Component based CSS)
+   Netlify - Free hosting 
+   
+   
+ 
+  
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Installation Steps:
+  
 ## Available Scripts
 
 In the project directory, you can run:
