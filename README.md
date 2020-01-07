@@ -23,12 +23,12 @@
      
   
  ### Technolgies Overview:
-   *ReactJs - Library (Component based approach to make UI)
-   *Redux - State Management
-   Sagas - Middleware for the state management
-   Styled Components - CSS (Component based CSS)
-   lickr-sdk - Packag to make api
-   Netlify - Free hosting
+      ReactJs - Library (Component based approach to make UI)
+      Redux - State Management
+      Sagas - Middleware for the state management
+      Styled Components - CSS (Component based CSS)
+      flickr-sdk - Packag to make api
+      Netlify - Free hosting
    
 ## Basic Installation:  
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
